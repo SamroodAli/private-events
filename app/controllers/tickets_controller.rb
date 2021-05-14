@@ -1,6 +1,8 @@
 class TicketsController < ApplicationController
 
   def create
-    @ticket.create(event_id:params[:id],attendee_id:current_user.id)
+    Ticket.create(event_id:params[:id],attendee_id:current_user.id)
+    @event = Event.find_by(id:params[:id])
+    redirect_to @event
   end
 end

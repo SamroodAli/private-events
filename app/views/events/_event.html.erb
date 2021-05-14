@@ -3,6 +3,6 @@
   <%= event.description %>
   <%= link_to 'show', event %>
   <% if event.creator_id != current_user.id %>
-    <%= link_to 'attend',"#" %>
+    <%= link_to 'attend',tickets_path(id: event.id), method: :post %>
   <% end %>
 </li>
