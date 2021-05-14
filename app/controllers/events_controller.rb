@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def index
     if signed_in?
       @my_events = Event.where(creator_id: current_user.id)
-      @other_events = Event.where.not(creator_id:current_user.id)
+      @other_events = Event.where.not(creator_id: current_user.id)
     else
       redirect_to root_path
     end
@@ -13,24 +13,23 @@ class EventsController < ApplicationController
   end
 
   def create
-    date = event_params[:date].to_datetime.strftime("%Y/%m/%d %H:%M")
-    @event = current_user.events.build(date:date,description: event_params[:description])
+    date = event_params[:date].to_datetime.strftime('%Y/%m/%d %H:%M')
+    @event = current_user.events.build(date: date, description: event_params[:description])
     if @event.save
-      Ticket.create(attendee_id:current_user.id,event_id:@event.id)
+      Ticket.create(attendee_id: current_user.id, event_id: @event.id)
       redirect_to @event
     else
       render :new
     end
   end
 
-
   def show
-    @event = Event.find_by(id:params[:id])
+    @event = Event.find_by(id: params[:id])
   end
 
-
   private
+
   def event_params
-    params.require(:event).permit(:description,:date)
+    params.require(:event).permit(:description, :date)
   end
 end
