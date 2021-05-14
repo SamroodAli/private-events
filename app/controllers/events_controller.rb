@@ -11,6 +11,15 @@ class EventsController < ApplicationController
     @event = current_user.events.build
   end
 
+  def create
+    @event = Event.new(event_params)
+    if @event.save?
+      redirect_to @event
+    else
+      render :new
+    end
+  end
+
 
   def show
     @event = params[:id]
