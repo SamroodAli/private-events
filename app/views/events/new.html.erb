@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render 'layouts/shared/error_messages', resource:@event %>
   <%= form_with model: @event, local: true do |form|%>
     <%= form.label :description %>
     <br>
