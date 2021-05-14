@@ -1,7 +1,7 @@
 <ul>
-  <%= @events.each do |event| %>
+  <% @events.all.each do |event| %>
     <li>
-      <%= event.name %>
+      <%= event.description %>
     </li>
   <% end %>
 </ul>
