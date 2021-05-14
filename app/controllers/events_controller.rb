@@ -13,7 +13,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    date = event_params[:date].to_datetime.strftime("%Y/%m/%d %H:%M")
+    @event = current_user.events.build(date:date,description: event_params[:description])
     if @event.save
       Ticket.create(attendee_id:current_user.id,event_id:@event.id)
       redirect_to @event
