@@ -7,24 +7,26 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <%= link_to 'Events', events_path,class:'nav-link  text-white' %>
-        <% if signed_in? %>
-          <li class="nav-item">
-            <%= link_to 'Settings', edit_user_registration_path,class:'nav-link  text-white' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'New event', new_event_path,class:'nav-link  text-white' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'text-white nav-link' %>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to 'Sign up', new_user_registration_path,class:'nav-link text-white' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'Log in', new_user_session_path,class:'nav-link text-white' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
+      </li>
+      <% if signed_in? %>
+        <li>   <%= link_to current_user.name, current_user,class:'nav-link  text-white' %></li>
+        <li class="nav-item">
+          <%= link_to 'Settings', edit_user_registration_path,class:'nav-link  text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'New event', new_event_path,class:'nav-link  text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'text-white nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to 'Sign up', new_user_registration_path,class:'nav-link text-white' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'Log in', new_user_session_path,class:'nav-link text-white' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

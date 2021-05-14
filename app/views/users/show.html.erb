@@ -1,9 +1,10 @@
-<%= @user.name %>
+<h1><%= @user.name %>'s events
+</h1>
 <ul>
-  <hr>
   <% @user.attended_events.each do |event| %>
-    <%= event.id %>
+    <hr>
+    <%= event.id %>  :
     <%= event.description %>
+    <hr>
   <% end %>
-  <hr>
 </ul>

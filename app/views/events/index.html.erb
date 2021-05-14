@@ -3,6 +3,6 @@
   <%= render @my_events %>
 <% end %>
 <% if @other_events.any? %>
-  <h3>Other events</h3>
+  <h3><%= @my_events.any? ? "Other events" : "Events"  %></h3>
   <%= render @other_events %>
 <% end %>
