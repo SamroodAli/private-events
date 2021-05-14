@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_many :event_attendees
+  has_many :tickets, class_name: :EventAttendee
 
   validates :description, presence: true
 
