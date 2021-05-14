@@ -10,4 +10,15 @@ class EventsController < ApplicationController
   def new
     @event = current_user.events.build
   end
+
+
+  def show
+    @event = 
+  end
+
+
+  private
+  def event_params
+    params.require(:events).permit(:description)
+  end
 end
