@@ -1,0 +1,10 @@
+<div class="container">
+  <%= form_with model: @event, local: true do |form|%>
+    <%= form.label :description %>
+    <br>
+    <%= form.text_field :description %>
+    <br>
+    <br>
+    <%= form.submit "Submit", class:"btn btn-success btn-sm" %>
+  <% end %>
+</div>
