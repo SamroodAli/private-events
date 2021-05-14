@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
 
   def show
-    @event = 
+    @event = params[:id]
   end
 
 
