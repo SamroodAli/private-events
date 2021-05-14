@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      Ticket.create(attendee_id:current_user,event_id:@event.id)
+      Ticket.create(attendee_id:current_user.id,event_id:@event.id)
       redirect_to @event
     else
       render :new
