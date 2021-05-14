@@ -2,8 +2,9 @@ class EventsController < ApplicationController
   def index
     if signed_in?
       @my_events = Event.where(creator_id: current_user.id)
+      @other_events = Event.where.not(creator_id:current_user.id)
     else
-      @other_events = Event.all
+      redirect_to root_path
     end
   end
 

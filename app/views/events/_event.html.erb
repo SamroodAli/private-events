@@ -1,0 +1,8 @@
+<li>
+  <%=event.id  %>
+  <%= event.description %>
+  <%= link_to 'show', event %>
+  <% if event.creator_id != current_user.id %>
+    <%= link_to 'attend',"#" %>
+  <% end %>
+</li>

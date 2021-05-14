@@ -1,10 +1,8 @@
-<% if signed_in? %>
+<% if @my_events.any? %>
   <h3>My events</h3>
-  <% @my_events.each do |event| %>
-    <li>
-      <%=event.id  %>
-      <%= event.description %>
-      <%= link_to 'show', event %>
-    </li>
-  <% end %>
+  <%= render @my_events %>
+<% end %>
+<% if @other_events.any? %>
+  <h3>Other events</h3>
+  <%= render @other_events %>
 <% end %>
