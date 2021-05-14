@@ -4,7 +4,7 @@
   <ul>
     <% @events.each do |event| %>
       <li><%= event.description %></li>
-      <li>Created by: <%= event.creator %>
+      <li>Created by: <%= event.creator.name %>
       </li>
     <% end %>
   </ul>
