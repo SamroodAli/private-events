@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :user
+  has_many :event_attendees
 
   validates :description, presence: true
 
