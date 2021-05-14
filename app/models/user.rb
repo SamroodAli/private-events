@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :tickets, foreign_key: :attendee_id
   has_many :attended_events, through: :tickets, source: :event
+  has_many :events, foreign_key: :host_id
 end
