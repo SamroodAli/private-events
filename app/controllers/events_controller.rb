@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
     if signed_in?
-      @events = Event.where(creator_id: current_user.id)
+      @my_events = Event.where(creator_id: current_user.id)
     else
-      @events = Event.all
+      @other_events = Event.all
     end
   end
 

@@ -1,5 +1,10 @@
-  <% @events.each do |event| %>
-  <li>
-    <%= event.description %>
-  </li>
+<% if signed_in? %>
+  <h3>My events</h3>
+  <% @my_events.each do |event| %>
+    <li>
+      <%=event.id  %>
+      <%= event.description %>
+      <%= link_to 'show', event %>
+    </li>
+  <% end %>
 <% end %>
