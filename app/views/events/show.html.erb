@@ -1,6 +1,7 @@
 <h1>Event: <%= @event.id %></h1>
 <h3>by:<%= @event.creator.name%></h3>
 <%= @event.description %>
+<%= @event.date %>
 <h3>Attendees</h3>
 <ul>
   <% @event.attendees.each do |attendee| %>
