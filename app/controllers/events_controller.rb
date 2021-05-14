@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
 
   def show
-    @event = params[:id]
+    @event = Event.find_by(id:params[:id])
   end
 
 
