@@ -1,11 +1,3 @@
-<% if @my_events.any? %>
-  <h3>My events</h3>
-  <%= render @my_events %>
-<% end %>
-<% if @other_events.any? %>
-  <h3><%= @my_events.any? ? "Other events" : "Events"  %></h3>
-  <%= render @other_events %>
-<% end %>
 <% if @upcoming_events.any? %>
   <h3>Upcoming events</h3>
   <%= render @upcoming_events %>

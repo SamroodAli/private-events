@@ -1,8 +1,6 @@
 class EventsController < ApplicationController
   def index
     if signed_in?
-      @my_events = Event.where(creator_id: current_user.id)
-      @other_events = Event.where.not(creator_id: current_user.id)
       @past_events = Event.past
       @upcoming_events = Event.upcoming
     else
