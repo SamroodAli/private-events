@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :events
   resources :tickets
   resources :users, only: :show
+  delete '/tickets', to: "tickets#destroy"
   root "static_pages#home"
 end

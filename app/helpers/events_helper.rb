@@ -16,4 +16,8 @@ module EventsHelper
     event.attendees.include?(current_user)
   end
 
+  def event_ticket(event)
+    {event_id:event.id,attendee_id:current_user.id}
+  end
+
 end

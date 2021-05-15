@@ -1,23 +1,22 @@
 <div>
   <hr>
   <p>
-    <%=event.id  %>:
-    <%= event.description %>
+    <h3><%=event.id  %>:
+      <%= event.description %>
+    </h3>
     <%  %>
   </p>
   <p>
     Created by <%= event_creator(event)%>
   </p>
-  <%= link_to 'Show', event %>
-  <% if others_event?(event) && !attending?(event)%>
-    <%= link_to 'Attend',tickets_path(id: event.id), method: :post %>
+  <% if !attending?(event) %>
+    <%= link_to 'Attend',tickets_path(ticket: event_ticket(event)), method: :post ,class:"btn bg-success text-white"%>
   <% end %>
   <% if attending?(event) %>
-    <br>
     You are attending.
-    <p>
-      <%= link_to 'Cancel attending this event.',tickets_path(id: event.id), method: :post %>
-    </p>
+    <br>
+    <%= link_to 'Cancel',tickets_path(ticket: event_ticket(event)), method: :delete ,class:"btn bg-success text-white" %>
   <% end %>
+  <%= link_to 'Show', event ,class:"btn bg-success text-white"%>
   <hr>
 </div>
