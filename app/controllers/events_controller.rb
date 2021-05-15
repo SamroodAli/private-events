@@ -4,7 +4,7 @@ class EventsController < ApplicationController
       @past_events = Event.past
       @upcoming_events = Event.upcoming
     else
-      flash[:warning] = "Please sign in"
+      flash[:warning] = 'Please sign in'
       redirect_to root_path
     end
   end
