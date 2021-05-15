@@ -2,6 +2,6 @@
 </h1>
 <%= render @user.events %>
 <h3>Upcoming events</h3>
-<%= render current_user.attended_events.upcoming%>
+<%= render current_user.attended_events.upcoming %>
 <h3>Past events</h3>
-<%= render current_user.attended_events.past%>
+<%= render current_user.attended_events.past, past: true%>
