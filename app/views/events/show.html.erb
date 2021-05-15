@@ -10,7 +10,7 @@
 <ul>
   <% @event.attendees.each do |attendee| %>
     <li>
-      <% if my_event?(@event) %>
+      <% if me?(attendee) %>
         <%= "Me" %>
       <% else %>
         <%= attendee.name %>

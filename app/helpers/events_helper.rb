@@ -20,4 +20,8 @@ module EventsHelper
     {event_id:event.id,attendee_id:current_user.id}
   end
 
+
+  def me?(user)
+    user == current_user
+  end
 end
