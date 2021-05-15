@@ -17,9 +17,16 @@ Then install the needed packages (while skipping any Ruby gems needed only in pr
 $ bundle install
 ```
 
-Next, migrate the database:
+Next, setup webpacker configuration
 
 ```
+$ rails webpacker:install
+```
+
+After that, create and migrate the database:
+
+```
+$ rails db:create
 $ rails db:migrate
 ```
 
