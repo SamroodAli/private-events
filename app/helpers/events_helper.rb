@@ -1,7 +1,11 @@
 module EventsHelper
 
+  def me?(user)
+    user == current_user
+  end
+
   def my_event?(event)
-    event.creator == current_user
+    me?(event.creator)
   end
 
   def others_event?(event)
@@ -9,7 +13,7 @@ module EventsHelper
   end
   
   def event_creator(event)
-    my_event?(event) ? "Me" : event.creator.name
+    my_event?(event) ? "me" : event.creator.name
   end
 
   def attending?(event)
@@ -20,8 +24,4 @@ module EventsHelper
     {event_id:event.id,attendee_id:current_user.id}
   end
 
-
-  def me?(user)
-    user == current_user
-  end
 end

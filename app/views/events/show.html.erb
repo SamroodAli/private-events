@@ -1,5 +1,5 @@
 <h1>Event: <%= @event.id %></h1>
-<h2>by:<%= @event.creator.name%></h2>
+<h2>created by <%= event_creator(@event)%></h2>
 <br>
 <h3><%= @event.description %></h3>
 <br>
