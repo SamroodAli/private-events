@@ -1,8 +1,8 @@
 <% if @upcoming_events.any? %>
   <h3>Upcoming events</h3>
-  <%= render @upcoming_events %>
+  <%= render @upcoming_events, past: false %>
 <% end %>
 <% if @past_events.any? %>
   <h3>Past events</h3>
-  <%= render @past_events %>
+  <%= render @past_events, past: true %>
 <% end %>

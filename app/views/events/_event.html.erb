@@ -9,10 +9,10 @@
   <p>
     Created by <%= event_creator(event)%>
   </p>
-  <% if !attending?(event) %>
+  <% if !attending?(event) && !past %>
     <%= link_to 'Attend',tickets_path(ticket: event_ticket(event)), method: :post ,class:"btn bg-success text-white"%>
   <% end %>
-  <% if attending?(event) %>
+  <% if attending?(event) && !past %>
     You are attending.
     <br>
     <%= link_to 'Cancel',tickets_path(ticket: event_ticket(event)), method: :delete ,class:"btn bg-success text-white" %>
