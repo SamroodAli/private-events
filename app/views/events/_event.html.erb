@@ -1,4 +1,3 @@
-<% past = past || false %>
 <div>
   <hr>
   <p>
@@ -10,9 +9,10 @@
   <p>
     Created by <%= event_creator(event)%>
   </p>
+  <% past = past || false %>
   <% if !attending?(event) && !past %>
     <%= link_to 'Attend',tickets_path(ticket: event_ticket(event)), method: :post ,class:"btn bg-success text-white"%>
-  <% elsif attending?(event) && !past %>
+  <% elsif attending?(event) && !past%>
     <strong>You are attending.</strong>
     <br>
     <br>
