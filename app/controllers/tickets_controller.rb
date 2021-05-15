@@ -13,4 +13,9 @@ class TicketsController < ApplicationController
       redirect_to event
     end
   end
+
+
+  def destroy
+    Ticket.find_by(attendee_id:current_user.id,event_id:)
+  end
 end
