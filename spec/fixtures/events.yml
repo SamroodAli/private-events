@@ -2,13 +2,16 @@ past:
   description: "Past event"
   date: <%= (DateTime.now() - 1.month) %>
   creator_id: 1
+  id: 1
 
 present:
   description: "Past event"
   date: <%= DateTime.now().utc %>
   creator_id: 1
+  id: 2
 
 past:
   description: "Past event"
   date: <%= (DateTime.now() + 1.month) %>
   creator_id: 1
+  id: 3

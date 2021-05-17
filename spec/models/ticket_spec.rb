@@ -3,34 +3,25 @@ require 'rails_helper'
 RSpec.describe Ticket do
   fixtures :all
 
-  subject(:ticket){Ticket.new(attendee_id:1,event_id:1)}
+  subject(:ticket) {
+    user = users(:samrood)
+    event = events(:present)
+    Ticket.new(attendee_id: user.id,event_id:event.id)
+  }
+
   let(:invalid_ticket){ Ticket.new}
 
-    describe 'Validity with description, date and creator from fixtures' do
-      it 'should be valid from fixtures' do
+    describe 'Validity with attendee id and event id' do
+      it 'should be valid' do
         expect(subject).to be_valid
       end
     end 
 
-    describe :invalidity do
-      it 'should not be valid with blank fields' do
-        expect(invalid_event).not_to be_valid
+    describe "Ticket is invalid with no user and event" do
+      it 'should be invalid' do
+        expect(invalid_ticket).not_to be_valid
       end
-    end 
-
-    describe "Creator must exist" do
-      it 'No creator event must be invalid' do
-        event = Event.new(date:DateTime.now.utc,description:"No creator")
-        expect(event).not_to be_valid
-      end
-    end 
-
-    describe "Date should exist" do
-      it 'should not be valid with no date' do
-        user = Event.new(description:"Hello world", creator_id:1)
-        expect(invalid_event).not_to be_valid
-      end
-    end 
+    end
 end
 
 
