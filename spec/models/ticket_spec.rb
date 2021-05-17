@@ -22,6 +22,20 @@ RSpec.describe Ticket do
         expect(invalid_ticket).not_to be_valid
       end
     end
+
+    describe "User must be present" do
+      it 'should be invalid' do
+        subject.attendee_id = nil
+        expect(subject).not_to be_valid
+      end
+    end
+
+    describe "Event must be present" do
+      it 'should be invalid' do
+        subject.event_id = nil
+        expect(subject).not_to be_valid
+      end
+    end
 end
 
 
