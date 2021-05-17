@@ -3,6 +3,9 @@ A site similar to a private Eventbrite which allows users to create events and t
 A user can create events. A user can attend many events. An event can be attended by many users.
 The events are divided into upcoming and past events using scoping and you can easily attend as well as cancel attending it.
 
+
+![Screenshot of the app](./event.png)
+
 ## Getting started
 
 To get started with the app, first clone the repo and `cd` into the directory:
