@@ -26,18 +26,17 @@ RSpec.describe 'Events Page', type: :system do
     end
   end
 
-
-  describe "New event" do
+  describe 'New event' do
     it 'should be able to create new event' do
       visit 'users/sign_in'
       fill_in :user_email, with: 'samrood@example.com'
       fill_in :user_password, with: :password
       click_button 'Log in'
       visit 'events/new'
-      fill_in :event_description,with:"Hello world"
-      fill_in :event_date,with: DateTime.now + 1.month
-      click_button "Submit"
-      expect(page).to have_content "Hello world"
-      end
+      fill_in :event_description, with: 'Hello world'
+      fill_in :event_date, with: DateTime.now + 1.month
+      click_button 'Submit'
+      expect(page).to have_content 'Hello world'
     end
+  end
 end

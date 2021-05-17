@@ -27,8 +27,8 @@ RSpec.describe Event do
 
   describe 'Date should exist' do
     it 'should not be valid with no date' do
-      user = Event.new(description: 'Hello world', creator_id: 1)
-      expect(invalid_event).not_to be_valid
+      event = Event.new(description: 'Hello world', creator_id: 1)
+      expect(event).not_to be_valid
     end
   end
 end
