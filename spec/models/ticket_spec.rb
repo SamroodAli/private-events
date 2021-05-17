@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Event do
+RSpec.describe Ticket do
   fixtures :all
 
-  subject(:present){events(:present)}
-  let(:invalid_event){ Event.new}
+  subject(:ticket){Ticket.new(attendee_id:1,event_id:1)}
+  let(:invalid_ticket){ Ticket.new}
 
     describe 'Validity with description, date and creator from fixtures' do
       it 'should be valid from fixtures' do
