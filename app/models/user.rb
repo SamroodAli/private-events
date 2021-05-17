@@ -8,9 +8,4 @@ class User < ApplicationRecord
   has_many :attended_events, through: :tickets, source: :event
   has_many :events, foreign_key: :creator_id
   validates :name, presence: true
-
-
 end
-
-
-
