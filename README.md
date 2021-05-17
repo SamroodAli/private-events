@@ -1,6 +1,7 @@
 # Private events
 A site similar to a private Eventbrite which allows users to create events and then manage user signups. 
-A user can create events. A user can attend many events. An event can be attended by many users
+A user can create events. A user can attend many events. An event can be attended by many users.
+The events are divided into upcoming and past events using scoping and you can easily attend as well as cancel attending it.
 
 ## Getting started
 
