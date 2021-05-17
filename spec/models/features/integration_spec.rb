@@ -6,7 +6,7 @@ RSpec.describe 'Events Page', type: :system do
     describe 'Events page' do
       it 'shows past andupcoming events' do
       visit 'users/sign_in'
-      fill_in :user_email,with: users(:samrood).email
+      fill_in :user_email,with: "samrood@example.com"
       fill_in :user_password,with: :password
       click_button 'Log in'
       click_link 'Events'
