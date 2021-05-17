@@ -14,7 +14,7 @@ RSpec.describe User do
 
     describe :invalidity do
       it 'should not be valid with blank fields' do
-        expect(invalid_user).to be_valid
+        expect(invalid_user).not_to be_valid
       end
     end 
 end
