@@ -2,12 +2,19 @@ require 'rails_helper'
 
 RSpec.describe User do
   fixtures :users
-  subject(:user){users(:samrood)}
 
-    describe :validity do
-      it 'should be valid' do
-        puts user.valid?
+  subject(:user){users(:samrood)}
+  let(:invalid_user){ User.new}
+
+    describe 'Validity with name,password and email from fixtures' do
+      it 'should be valid from fixtures' do
         expect(user).to be_valid
+      end
+    end 
+
+    describe :invalidity do
+      it 'should not be valid with blank fields' do
+        expect(invalid_user).to be_valid
       end
     end 
 end
