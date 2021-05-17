@@ -1,5 +1,6 @@
 samrood:
   name: Samrood
+  id: 1
   email: samrood@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
