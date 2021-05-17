@@ -1,0 +1,20 @@
+<h1>Event: <%= @event.id %></h1>
+<h2>created by <%= event_creator(@event)%></h2>
+<br>
+<h3><%= @event.description %></h3>
+<br>
+<p>
+  Time:  <%= @event.date %>
+</p>
+<h3>Attendees</h3>
+<ul>
+  <% @event.attendees.each do |attendee| %>
+    <li>
+      <% if me?(attendee) %>
+        <%= "Me" %>
+      <% else %>
+        <%= attendee.name %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

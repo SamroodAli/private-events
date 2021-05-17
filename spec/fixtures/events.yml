@@ -1,0 +1,17 @@
+past:
+  description: "Past event"
+  date: <%= (DateTime.now() - 1.month) %>
+  creator_id: 1
+  id: 1
+
+present:
+  description: "Present event"
+  date: <%= DateTime.now().utc %>
+  creator_id: 1
+  id: 2
+
+future:
+  description: "Future event"
+  date: <%= (DateTime.now() + 1.month) %>
+  creator_id: 1
+  id: 3

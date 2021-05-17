@@ -1,0 +1,23 @@
+<div>
+  <hr>
+  <p>
+    <h3><%=event.id  %>:
+      <%= event.description %>
+    </h3>
+    <%  %>
+  </p>
+  <p>
+    Created by <%= event_creator(event)%>
+  </p>
+  <% past = past || false %>
+  <% if !attending?(event) && !past %>
+    <%= link_to 'Attend',tickets_path(ticket: event_ticket(event)), method: :post ,class:"btn bg-success text-white"%>
+  <% elsif attending?(event) && !past%>
+    <strong>You are attending.</strong>
+    <br>
+    <br>
+    <%= link_to 'Cancel',tickets_path(ticket: event_ticket(event)), method: :delete ,class:"btn bg-success text-white" %>
+  <% end %>
+  <%= link_to 'Show', event ,class:"btn bg-success text-white"%>
+  <hr>
+</div>

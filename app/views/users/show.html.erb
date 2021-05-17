@@ -1,0 +1,11 @@
+<h1><%= @user.name %>'s events
+</h1>
+<%= render @user.events %>
+<% if my_future_events.any? %>
+  <h3>Upcoming events</h3>
+<% end %>
+<%= render my_future_events%>
+<% if my_past_events.any? %>
+  <h3>Past events</h3>
+  <%= render my_past_events, past: true%>
+<% end %>

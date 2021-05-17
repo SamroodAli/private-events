@@ -1,0 +1,13 @@
+  <%= render 'layouts/shared/error_messages', resource:@event %>
+<%= form_with model: @event, local: true do |form|%>
+  <%= form.label :description %>
+  <br>
+  <%= form.text_field :description %>
+  <br>
+  <%= form.label :date %>
+  <br>
+  <%= form.datetime_field :date %>
+  <br>
+  <br>
+  <%= form.submit "Submit", class:"btn btn-success btn-sm" %>
+<% end %>

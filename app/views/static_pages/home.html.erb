@@ -1,0 +1,12 @@
+<h1>Welcome to Private members only</h1>
+<% if @events.any? %>
+  <h2>Here are the list of events</h2>
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= event.description %></li>
+      <li>Created by: <%= event.creator.name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<h3>Join to create and attend events</h3>
